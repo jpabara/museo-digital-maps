@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "museo-digital-maps",
+    "slug": "museo-digital-maps",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "@rnmapbox/maps",
+      {
+        "RNMapboxMapsDownloadToken": "sk.eyJ1Ijoiam9lbXBhIiwiYSI6ImNtMTQzNXZ2MzFqMWcyanBxeWU1d3UzYjYifQ.xKyp5N5k7dS0DJKAp56Q_A"
+      }
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
