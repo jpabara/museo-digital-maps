@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Digital</title>
+    <link rel="stylesheet" href="styles/map.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <header>
+        <h1>Museo Digital por Palestina</h1>
+    </header>
+    <main>
+        <div id='map'></div>
+
+        <button class="scene-button next-scene-button" onclick="nextScene()">Siguiente →</button>
+        <button class="scene-button back-scene-button" onclick="previousScene()">← Atras</button>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 Museo Digital. All rights reserved.</p>
+    </footer>
+
+    <script src="js/initializeMap.js"></script>
+    <script src="js/scenesLoader.js"></script>
+    <script src="js/scenes.js"></script>
+</body>
+</html>

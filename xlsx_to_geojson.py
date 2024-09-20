@@ -32,12 +32,13 @@ geojson = {
     "features": []
 }
 for row in json_obj:
+    print("row", row)
     feature = {
         "type": "Feature",
         "properties": { **row },
         "geometry": {
             "type": "Point",
-            "coordinates": [row['latitude'], row['longitude']]
+            "coordinates": [row['longitude'], row['latitude']]
         }
     }
     geojson['features'].append(feature)
