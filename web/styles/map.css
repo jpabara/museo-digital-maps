@@ -10,8 +10,40 @@ body {
     width: 100%;
 }
 
+#legend {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);	
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+
+#scene-description {
+    max-width: 300px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 1002;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .scene-button {
     position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
     z-index: 1000;
     background-color: #fff;
     padding: 10px;
