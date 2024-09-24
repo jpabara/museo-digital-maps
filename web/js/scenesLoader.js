@@ -80,54 +80,7 @@ const loadSceneDescription = (sceneConfig) => {
     `
 }
 
-const renderScene = (sceneNr) => {
-    cleanScene(previousSceneNr)
-    const sceneConfig = scenes[sceneNr]
-    const sourceBaseName = `source-scene-${sceneNr}`
-    const layerBaseName = `layer-scene-${sceneNr}`
-
-    for (const [i, sceneData] of sceneConfig.data.entries()) {
-        let sceneSourceName = `${sourceBaseName}_${i}`
-        let sceneLayerName = `${layerBaseName}_${i}`
-        map.addSource(sceneSourceName, {
-            type: 'geojson',
-            data: `data/${sceneData.fileName}`
-        });
-        map.addLayer({
-            ...sceneData.layerProperties,
-            'id': sceneLayerName,
-            'type': sceneData.layerType,
-            'source': sceneSourceName,
-        });
-        addToLegend(
-            sceneData.layerProperties,
-            sceneData.name,
-        )
-    }
-    loadSceneDescription(sceneConfig)
-
-    map.flyTo({
-        center: sceneConfig.center || initialCenter,
-        pitch: sceneConfig.pitch || 0,
-        bearing: sceneConfig.bearing || 0,
-        zoom: sceneConfig.zoom || initialZoom,
-        duration: 2000,
-        essential: true
-    });
-
-    if (sceneConfig.end) {
-        setTimeout(() => {
-            map.flyTo({
-                center: sceneConfig.end.center || initialCenter,
-                pitch: sceneConfig.end.pitch || 0,
-                bearing: sceneConfig.end.bearing || 0,
-                zoom: sceneConfig.end.zoom || initialZoom,
-                duration: sceneConfig.end.duration || 1,
-                essential: true,
-            });
-        }, 2000);
-    }
-
+const addHoverListeners = (layerName, sceneNr) => {
     map.on('mouseenter', layerName, (e) => {
         map.getCanvas().style.cursor = 'pointer';
 
@@ -156,4 +109,54 @@ const renderScene = (sceneNr) => {
         map.getCanvas().style.cursor = '';
         popup.remove();
     });
+}
+
+const renderScene = (sceneNr) => {
+    cleanScene(previousSceneNr)
+    const sceneConfig = scenes[sceneNr]
+    const sourceBaseName = `source-scene-${sceneNr}`
+    const layerBaseName = `layer-scene-${sceneNr}`
+
+    for (const [i, sceneData] of sceneConfig.data.entries()) {
+        let sceneSourceName = `${sourceBaseName}_${i}`
+        let sceneLayerName = `${layerBaseName}_${i}`
+        map.addSource(sceneSourceName, {
+            type: 'geojson',
+            data: `data/${sceneData.fileName}`
+        });
+        map.addLayer({
+            ...sceneData.layerProperties,
+            'id': sceneLayerName,
+            'type': sceneData.layerType,
+            'source': sceneSourceName,
+        });
+        addToLegend(
+            sceneData.layerProperties,
+            sceneData.name,
+        )
+        addHoverListeners(sceneLayerName, sceneNr)
+    }
+    loadSceneDescription(sceneConfig)
+
+    map.flyTo({
+        center: sceneConfig.center || initialCenter,
+        pitch: sceneConfig.pitch || 0,
+        bearing: sceneConfig.bearing || 0,
+        zoom: sceneConfig.zoom || initialZoom,
+        duration: 2000,
+        essential: true
+    });
+
+    if (sceneConfig.end) {
+        setTimeout(() => {
+            map.flyTo({
+                center: sceneConfig.end.center || initialCenter,
+                pitch: sceneConfig.end.pitch || 0,
+                bearing: sceneConfig.end.bearing || 0,
+                zoom: sceneConfig.end.zoom || initialZoom,
+                duration: sceneConfig.end.duration || 1,
+                essential: true,
+            });
+        }, 2000);
+    }
 }
