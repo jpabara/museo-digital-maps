@@ -2,7 +2,7 @@ var mapId = 'map'
 var mapStyle = 'mapbox://styles/joempa/cm1a2q73i00i001nw839t333q'
 var initialCenter = [35.00856210932468, 31.84378912291933]
 var initialZoom = 7
-var mapboxAccessToken = 'pk.eyJ1Ijoiam9lbXBhIiwiYSI6ImNtMTQzMngxaDFrbnQya29xcjV1bjkzdWoifQ.hbhJytPbhzvdVJeJXI9u1w'
+var mapboxAccessToken = ''
 var sceneNr = 0
 var previousSceneNr = -1
 var map
