@@ -150,7 +150,7 @@ const renderScene = (sceneNr) => {
 
     if (sceneConfig.end) {
         setTimeout(() => {
-            map.flyTo({
+            map.easeTo({
                 center: sceneConfig.end.center || initialCenter,
                 pitch: sceneConfig.end.pitch || 0,
                 bearing: sceneConfig.end.bearing || 0,
