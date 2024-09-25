@@ -59,7 +59,8 @@ const addToLegend = (layerProperties, layerName) => {
     const legendItem = document.createElement('div')
     let colorHTML = ''
     if (layerProperties.paint) {
-        colorHTML = `<span class="legend-color" style="background-color: ${layerProperties.paint['fill-color']}"></span>`
+        color = layerProperties.paint['fill-color'] || layerProperties.paint['line-color'] || layerProperties.paint['fill-extrusion-color']
+        colorHTML = `<span class="legend-color" style="background-color: ${color}"></span>`
     }
     legendItem.innerHTML = `<div class="legend-item">
         <div class="legend-text">${colorHTML} ${layerName}</div>

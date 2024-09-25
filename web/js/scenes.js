@@ -107,6 +107,97 @@ var scenes = [
         bearing: 0,
         zoom: 8,
     },
+    {
+        sceneName: 'Muro de Apartheid',
+        sceneDescription: 'El Muro de Apartheid quita territorio de los palestinos.',
+        data: [
+            {
+                fileName: 'separation_barrier_buffer.geojson',
+                name: 'Muro de Separación Cisjordania Construido (2020)',
+                type: 'geojson',
+                layerType: 'fill-extrusion',
+                layerProperties: {
+                    "paint": {
+                        "fill-extrusion-color": "rgb(255, 30, 30)",
+                        "fill-extrusion-height": 800,
+                        "fill-extrusion-base": 0,
+                        "fill-extrusion-opacity": 0.8,
+                        "fill-extrusion-flood-light-ground-attenuation": 0.2,
+                        "fill-extrusion-flood-light-color": "rgb(255, 255, 255)",
+                        "fill-extrusion-emissive-strength": 1,
+                    }
+                },
+                activePropertiesOnHover: [{
+                    'status_es': 'Estatus',
+                }],
+            },
+            {
+                fileName: 'separation_barrier.geojson',
+                name: 'Separación Cisjordania Construido y por Construir (2020)',
+                type: 'geojson',
+                layerType: 'line',
+                layerProperties: {
+                    'layout': {
+                        'line-join': 'round',
+                        'line-cap': 'round',
+                    },
+                    'paint': {
+                        'line-color': 'rgba(255, 0, 0, 1)',
+                        'line-width': 2
+                    }
+                },
+                activePropertiesOnHover: [{
+                    'status_es': 'Estatus',
+                }],
+            },
+            {
+                fileName: 'no_go_zone.geojson',
+                name: 'Muro de Gaza',
+                type: 'geojson',
+                layerType: 'fill-extrusion',
+                layerProperties: {
+                    "paint": {
+                        "fill-extrusion-color": "rgb(255, 30, 30)",
+                        "fill-extrusion-height": 800,
+                        "fill-extrusion-base": 0,
+                        "fill-extrusion-opacity": 0.8,
+                        "fill-extrusion-flood-light-ground-attenuation": 0.2,
+                        "fill-extrusion-flood-light-color": "rgb(255, 255, 255)",
+                        "fill-extrusion-emissive-strength": 1,
+                    }
+                },
+                activePropertiesOnHover: [{
+                    'type_en': 'Tipo',
+                }],
+            },
+            {
+                fileName: 'gaza_buffer_zone.geojson',
+                name: 'Zona de peligro (territorio perdido)',
+                type: 'geojson',
+                layerType: 'fill',
+                layerProperties: {
+                    "paint": {
+                        "fill-color": "rgba(255, 0, 0, 0.5)"
+                    }
+                },
+                activePropertiesOnHover: [{
+                    'Type': 'Tipo',
+                    'BUFF_DIST': 'Distancia del muro',
+                }],
+            }
+        ],
+        center: [35.47083368333204, 32.5554078949808],
+        pitch: 70,
+        bearing: -130,
+        zoom: 11,
+        end: {
+            center: [34.503828594654614, 31.438633748909684],
+            pitch: 80,
+            bearing: -290,
+            zoom: 11,
+            duration: 12000,
+        }
+    },
     
 ]
 
