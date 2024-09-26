@@ -21,7 +21,11 @@
         </div>
         <button class="scene-button next-scene-button" onclick="nextScene()">Siguiente →</button>
         <button class="scene-button back-scene-button" onclick="previousScene()">← Atras</button>
-        <progress id="progress-bar" value="0" max="100"></progress>
+        <div class="wrapper">
+			<div class="progress-bar">
+				<span id="progress-bar-fill" class="progress-bar-fill" style="width: 0%;"></span>
+			</div>
+		</div>
 
     </main>
     <footer>
