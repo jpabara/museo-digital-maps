@@ -1,11 +1,5 @@
-const speak = (text) => {
-    const synth = window.speechSynthesis;
-    const utterThis = new SpeechSynthesisUtterance(text);
-    synth.speak(utterThis);
-}
 
 const nextScene = () => {
-    console.log("Moving to next scene.")
     previousSceneNr = sceneNr
     sceneNr += 1
     if (sceneNr == scenes.length) {
@@ -17,7 +11,6 @@ const nextScene = () => {
 }
 
 const previousScene = () => {
-    console.log("Moving to previous scene.")
     previousSceneNr = sceneNr
     sceneNr -= 1
     if (sceneNr == scenes.length) {
@@ -30,11 +23,9 @@ const previousScene = () => {
 
 const removeLayerAndSource = (layerName, sourceName) => {
     if (map.getLayer(layerName)) {
-        console.log("Removing layer: ", layerName)
         map.removeLayer(layerName)
     }
     if (map.getSource(sourceName)) {
-        console.log("Removing source: ", sourceName)
         map.removeSource(sourceName)
     }
 }
@@ -73,7 +64,6 @@ const loadSceneDescription = (sceneConfig) => {
     if (sceneConfig.sceneDescription) {
         descriptionHTML = `<p id="scene-text">${sceneConfig.sceneDescription}</p>`
     }
-    speak(sceneConfig.sceneDescription)
     sceneDescription.innerHTML = `
         <h2 id="scene-title">${sceneConfig.sceneName}</h2>
         ${descriptionHTML}
@@ -117,6 +107,7 @@ const renderScene = (sceneNr) => {
     const sceneConfig = scenes[sceneNr]
     const sourceBaseName = `source-scene-${sceneNr}`
     const layerBaseName = `layer-scene-${sceneNr}`
+    speak(sceneConfig.sceneDescription)
 
     for (const [i, sceneData] of sceneConfig.data.entries()) {
         let sceneSourceName = `${sourceBaseName}_${i}`
