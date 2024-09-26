@@ -3,7 +3,6 @@ var lastTextSpoken = ''
 
 const toggleAudio = () => {
     audioOn = !audioOn
-    const synth = window.speechSynthesis;
     if (audioOn) {
         document.getElementById('audio-toggle').innerHTML = '🔊'
         speak(lastTextSpoken)

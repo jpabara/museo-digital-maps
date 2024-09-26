@@ -107,8 +107,6 @@ const renderScene = (sceneNr) => {
     const sceneConfig = scenes[sceneNr]
     const sourceBaseName = `source-scene-${sceneNr}`
     const layerBaseName = `layer-scene-${sceneNr}`
-    speak(sceneConfig.sceneDescription)
-
     for (const [i, sceneData] of sceneConfig.data.entries()) {
         let sceneSourceName = `${sourceBaseName}_${i}`
         let sceneLayerName = `${layerBaseName}_${i}`
@@ -129,6 +127,7 @@ const renderScene = (sceneNr) => {
         addHoverListeners(sceneLayerName, sceneNr)
     }
     loadSceneDescription(sceneConfig)
+    speak(sceneConfig.sceneDescription)
 
     map.flyTo({
         center: sceneConfig.center || initialCenter,
