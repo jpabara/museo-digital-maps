@@ -41,6 +41,17 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 576px) { 
+    #scene-description {
+        max-width: unset;
+        margin: 10px;
+        left: 0px;
+        right: 0px;
+        bottom: 55px;
+        top: unset;
+    }
+ }
+
 .scene-button {
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
@@ -49,14 +60,22 @@ body {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    bottom: 15px;
 }
 
 .back-scene-button {
-    bottom: 10px;
     left: 10px;
+    height: 40px;
 }
 
 .next-scene-button {
-    bottom: 10px;
     right: 10px;
+    height: 40px;
+}
+
+#progress-bar {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    bottom: 0px;
 }

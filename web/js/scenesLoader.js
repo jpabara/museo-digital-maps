@@ -8,11 +8,10 @@ const nextScene = () => {
     console.log("Moving to next scene.")
     previousSceneNr = sceneNr
     sceneNr += 1
-    if (sceneNr >= scenes.length) {
+    if (sceneNr == scenes.length) {
         sceneNr = 0
-    }
-    if (sceneNr < 0) {
-        sceneNr = 0
+    } else if (sceneNr == -1) {
+        sceneNr = scenes.length - 1
     }
     renderScene(sceneNr)
 }
@@ -21,11 +20,10 @@ const previousScene = () => {
     console.log("Moving to previous scene.")
     previousSceneNr = sceneNr
     sceneNr -= 1
-    if (sceneNr >= scenes.length) {
+    if (sceneNr == scenes.length) {
         sceneNr = 0
-    }
-    if (sceneNr < 0) {
-        sceneNr = 0
+    } else if (sceneNr == -1) {
+        sceneNr = scenes.length - 1
     }
     renderScene(sceneNr)
 }
@@ -113,6 +111,7 @@ const addHoverListeners = (layerName, sceneNr) => {
 }
 
 const renderScene = (sceneNr) => {
+    setProgress(sceneNr)
     cleanScene(previousSceneNr)
     const sceneConfig = scenes[sceneNr]
     const sourceBaseName = `source-scene-${sceneNr}`

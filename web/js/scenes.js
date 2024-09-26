@@ -187,14 +187,14 @@ var scenes = [
             }
         ],
         center: [35.47083368333204, 32.5554078949808],
-        pitch: 70,
+        pitch: 20,
         bearing: -130,
-        zoom: 11,
+        zoom: 9,
         end: {
             center: [34.503828594654614, 31.438633748909684],
-            pitch: 80,
+            pitch: 30,
             bearing: -290,
-            zoom: 11,
+            zoom: 9,
             duration: 12000,
         }
     },

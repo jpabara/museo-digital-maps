@@ -15,6 +15,7 @@ const initMap = () => {
         style: mapStyle,
         center: initialCenter,
         zoom: initialZoom,
+        attributionControl: false,
     });
 
     popup = new mapboxgl.Popup({
@@ -25,6 +26,9 @@ const initMap = () => {
     map.on('load', () => {
         renderScene(0)
     })
+
+    document.getElementById('progress-bar').max = scenes.length - 1
+
 }
 
 window.onload = initMap
