@@ -127,7 +127,6 @@ const renderScene = (sceneNr) => {
         addHoverListeners(sceneLayerName, sceneNr)
     }
     loadSceneDescription(sceneConfig)
-    speak(sceneConfig.sceneDescription)
 
     map.flyTo({
         center: sceneConfig.center || initialCenter,
@@ -150,4 +149,5 @@ const renderScene = (sceneNr) => {
             });
         }, 2000);
     }
+    speak(sceneConfig.sceneDescription)
 }
