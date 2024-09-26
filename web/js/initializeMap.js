@@ -23,9 +23,6 @@ const initMap = () => {
         closeOnClick: false
     });
 
-    map.on('load', () => {
-        renderScene(0)
-    })
     initAudio()
 }
 

@@ -66,11 +66,20 @@ body {
 .back-scene-button {
     left: 10px;
     height: 40px;
+    display: none;
 }
 
 .next-scene-button {
     right: 10px;
     height: 40px;
+    display: none;
+}
+
+
+.start-scene-button {
+    height: 40px;
+    left: 10px;
+    right: 10px;
 }
 
 .wrapper {

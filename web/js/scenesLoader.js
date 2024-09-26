@@ -1,4 +1,12 @@
 
+const startScene = () => {
+    sceneNr = 0
+    document.getElementById('start-button').style.display = 'none'
+    document.getElementById('next-button').style.display = 'inline'
+    document.getElementById('previous-button').style.display = 'inline'
+    renderScene(sceneNr)
+}
+
 const nextScene = () => {
     previousSceneNr = sceneNr
     sceneNr += 1
