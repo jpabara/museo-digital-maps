@@ -73,6 +73,7 @@ const loadSceneDescription = (sceneConfig) => {
     if (sceneConfig.sceneDescription) {
         descriptionHTML = `<p id="scene-text">${sceneConfig.sceneDescription}</p>`
     }
+    speak(sceneConfig.sceneDescription)
     sceneDescription.innerHTML = `
         <h2 id="scene-title">${sceneConfig.sceneName}</h2>
         ${descriptionHTML}

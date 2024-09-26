@@ -57,7 +57,7 @@ var scenes = [
     },
     {
         sceneName: 'Zonas A, B y C',
-        sceneDescription: 'Las zonas A, B y C son áreas de Cisjordania que fueron establecidas en el Acuerdo Interino de Oslo I y II. La zona A está bajo control civil y de seguridad palestino, la zona B está bajo control civil palestino y seguridad israelí y la zona C está bajo control civil y de seguridad israelí. Israel ha aprovechado las zonas B y C para construir asentamientos ilegales de manera indiscriminada.',
+        sceneDescription: 'Las zonas A, B y C son áreas de Cisjordania que fueron establecidas en el Acuerdo Interino de Oslo 1 y 2. La zona A está bajo control civil y de seguridad palestino, la zona B está bajo control civil palestino y seguridad israelí y la zona C está bajo control civil y de seguridad israelí. Israel ha aprovechado las zonas B y C para construir asentamientos ilegales de manera indiscriminada.',
         data: [
             {
                 fileName: 'area_a.geojson',
