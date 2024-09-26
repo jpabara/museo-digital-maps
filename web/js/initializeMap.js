@@ -26,7 +26,7 @@ const initMap = () => {
     map.on('load', () => {
         renderScene(0)
     })
-
+    initAudio()
 }
 
 window.onload = initMap
