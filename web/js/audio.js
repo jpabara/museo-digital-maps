@@ -2,18 +2,45 @@ var audioOn = true
 var lastTextSpoken = ''
 var selectedVoice
 
+const detectCurrentBrowser = () => {
+    if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
+        return 'Opera'
+    } else if (navigator.userAgent.indexOf("Edg") != -1) {
+        return 'Edge'
+    } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+        return 'Chrome'
+    } else if (navigator.userAgent.indexOf("Safari") != -1) {
+        return 'Safari'
+    } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+        return 'Firefox'
+    } else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) {
+        return 'IE';
+    } else {
+        return 'unknown';
+    }
+}
+
 const initAudio = () => {
-    const audioAvailable = EasySpeech.detect()
-    console.log("AUDIO: ", audioAvailable)
-    EasySpeech.init({ maxTimeout: 5000, interval: 250 })
-        .then(() => {
-            console.debug('load complete')
-            const voices = EasySpeech.voices()
-            selectedVoice = selectVoice(voices, 'es-ES')
-            console.log(voices)
-        })
-        .catch(e => console.error(e)
-    )
+    const browser = detectCurrentBrowser()
+    console.log('Browser: ', browser)
+    const isChrome = browser === 'Chrome'
+    if (isChrome) {
+        const audioAvailable = EasySpeech.detect()
+        console.log("AUDIO: ", audioAvailable)
+        EasySpeech.init({ maxTimeout: 5000, interval: 250 })
+            .then(() => {
+                console.debug('load complete')
+                const voices = EasySpeech.voices()
+                selectedVoice = selectVoice(voices, 'es-ES')
+                console.log(voices)
+            })
+            .catch(e => console.error(e)
+        )
+    } else {
+        console.log('Audio not available')
+        document.getElementById('audio-toggle').style.display = 'none'
+        audioOn = false
+    }
 }
 
 const selectVoice = (voices, langCode='es-US') => {
@@ -47,17 +74,4 @@ const speak = async (text) => {
         rate: 1,
         volume: 1,
     })
-    // const synth = window.speechSynthesis;
-    // const splittedTexts = text.split('.')
-    // utterAll(synth, splittedTexts)
-}
-
-const utterAll = (synth, texts, currentTextIndex=0) => {
-    if (texts[currentTextIndex]) {
-        const utterThis = new SpeechSynthesisUtterance(texts[currentTextIndex]);
-        currentTextIndex += 1
-        utterThis.onend = () => { utterAll(synth, texts, currentTextIndex) }
-        synth.cancel();
-        synth.speak(utterThis);
-    }
 }
