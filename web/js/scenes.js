@@ -198,28 +198,5 @@ var scenes = [
             duration: 12000,
         }
     },
-    {
-        sceneName: 'Robo de aguas',
-        sceneDescription: 'Robo de aguas por parte de Israel.',
-        data: [
-            {
-                fileName: 'water.geojson',
-                name: 'Zonas de Napas Subterráneas',
-                type: 'geojson',
-                layerType: 'fill',
-                layerProperties: {
-                    "paint": {
-                        "fill-color": "rgba(0, 0, 255, 0.5)"
-                    }
-                },
-                activePropertiesOnHover: [{
-                }],
-            },
-        ],
-        center: [35.09216936125758, 31.899221509220492],
-        pitch: 20,
-        bearing: 0,
-        zoom: 8,
-    },
 ]
 
