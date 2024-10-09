@@ -75,7 +75,7 @@ body {
         left: 0px;
         right: 0px;
         top: unset;
-        bottom: 6%;
+        bottom: 60px;
     }
  }
 
@@ -89,22 +89,20 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     bottom: 15px;
+    height: 40px;
 }
 
 .back-scene-button {
     left: 10px;
-    height: 40px;
     display: none;
 }
 
 .next-scene-button {
     right: 10px;
-    height: 40px;
     display: none;
 }
 
 .start-scene-button {
-    height: 40px;
     left: 30%;
     right: 30%;
     bottom: 40%;
