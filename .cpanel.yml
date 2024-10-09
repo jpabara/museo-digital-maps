@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home6/cmu104499/public_html/
-    - /bin/cp -R web $DEPLOYPATH
+    - /bin/cp -R web/* $DEPLOYPATH
