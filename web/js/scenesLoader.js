@@ -4,6 +4,8 @@ const startScene = () => {
     document.getElementById('start-button').style.display = 'none'
     document.getElementById('next-button').style.display = 'inline'
     document.getElementById('previous-button').style.display = 'inline'
+    document.getElementById('scene-description').classList.remove('start')
+    document.getElementById('scene-description').classList.add('after-start')
     renderScene(sceneNr)
 }
 

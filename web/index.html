@@ -15,12 +15,12 @@
     <main>
         <div id='map'></div>
         <div id="legend"></div>
-        <span id="audio-toggle" onclick="toggleAudio()">🔊</span>
-        <div id="scene-description">
+        <span id="audio-toggle" class="scale-in" onclick="toggleAudio()">🔊</span>
+        <div id="scene-description" class="start scale-in">
             <h2 id="scene-title">Bienvenido al museo digital por Palestina</h2>
             <p id="scene-text">Haz click en Comenzar para ver la animación interactiva</p>
         </div>
-        <button id="start-button" class="scene-button start-scene-button" onclick="startScene()">Comenzar</button>
+        <button id="start-button" class="scene-button start-scene-button scale-in" onclick="startScene()">Comenzar</button>
         <button id="next-button" class="scene-button next-scene-button" onclick="nextScene()">Siguiente →</button>
         <button id="previous-button" class="scene-button back-scene-button" onclick="previousScene()">← Atras</button>
         <div class="wrapper">
