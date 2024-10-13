@@ -209,7 +209,7 @@ var scenes = [
                 layerType: 'fill',
                 layerProperties: {
                     "paint": {
-                        "fill-color": "rgba(10, 10, 255, 0.5)"
+                        "fill-color": "rgba(10, 100, 255, 0.5)"
                     }
                 },
                 activePropertiesOnHover: [{
@@ -223,7 +223,7 @@ var scenes = [
                 layerType: 'fill',
                 layerProperties: {
                     "paint": {
-                        "fill-color": "rgba(30, 30, 255, 0.6)"
+                        "fill-color": "rgba(30, 30, 255, 0.3)"
                     }
                 },
                 activePropertiesOnHover: [{
@@ -231,7 +231,7 @@ var scenes = [
                 }],
             },
         ],
-        center: [35.04919874965916, 31.954870441476505],
+        center: [34.95032838984824, 31.51361609948765],
         pitch: 20,
         bearing: 0,
         zoom: 7,
