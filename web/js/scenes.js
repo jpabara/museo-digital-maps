@@ -198,5 +198,43 @@ var scenes = [
             duration: 12000,
         }
     },
+    {
+        sceneName: 'Recursos hídricos',
+        sceneDescription: 'Israel roba los recursos hídricos, y limita y controla el acceso de agua a los Palestinos. Tapan los pozos de agua y destruyen las infraestructuras de agua pertenecientes a palestinos. Las tuberías de agua que van a territorio palestino son 10 veces más delgadas que las de territorio Israelí.',
+        data: [
+            {
+                fileName: 'coastal_acuifer.geojson',
+                name: 'Acuífero de la Costa',
+                type: 'geojson',
+                layerType: 'fill',
+                layerProperties: {
+                    "paint": {
+                        "fill-color": "rgba(10, 10, 255, 0.5)"
+                    }
+                },
+                activePropertiesOnHover: [{
+                    'name': 'Nombre',
+                }],
+            },
+            {
+                fileName: 'mountain_acuifer.geojson',
+                name: 'Acuífero de la Montaña',
+                type: 'geojson',
+                layerType: 'fill',
+                layerProperties: {
+                    "paint": {
+                        "fill-color": "rgba(30, 30, 255, 0.6)"
+                    }
+                },
+                activePropertiesOnHover: [{
+                    'name': 'Nombre',
+                }],
+            },
+        ],
+        center: [35.04919874965916, 31.954870441476505],
+        pitch: 20,
+        bearing: 0,
+        zoom: 7,
+    }
 ]
 
