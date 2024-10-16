@@ -1,7 +1,7 @@
 var scenes = [
     {
-        sceneName: 'Localidades palestinas destruidas en 1948',
-        sceneDescription: 'Muestra todas las localidades palestinas destruidas en 1948, incluyendo el número de habitantes en 1948 y los asentamientos judíos construidos en su lugar.',
+        sceneName: 'Aldeas Palestinas destruidas en 1948 por Israel',
+        sceneDescription: 'En 1948 Los fundadores de Israel realizaron una limpieza étnica en Palestina, para quedarse con la tierra, pero sin su gente. Destruyeron más de 500 aldeas, expulsando a su población nativa palestina. Robando y anexando también las principales ciudades como Haifa, Jaffa, Acre, Nazareth y parte de Jerusalén.',
         data: [{
             fileName: 'nakba-cities.geojson',
             name: 'Localidades palestinas destruidas en 1948',
@@ -25,8 +25,33 @@ var scenes = [
         zoom: 8,
     },
     {
+        sceneName: 'Aldeas Palestinas destruidas en 1948 por Israel',
+        sceneDescription: 'El 71% de la tierra propiedad de palestinos, fue robada por Israel en pocos meses. Sus legítimos dueños, aun conservan títulos de dominio y las llaves de sus antiguas casas, con la esperanza de algún día poder volver',
+        data: [{
+            fileName: 'nakba-cities.geojson',
+            name: 'Localidades palestinas destruidas en 1948',
+            type: 'geojson',
+            layerType: 'symbol',
+            layerProperties: {
+                'layout': {
+                    'icon-image': 'mapbox-home'
+                }
+            },
+            activePropertiesOnHover: [{
+                'Village (En)': 'Nombre',
+                'District (En)': 'Distrito',
+                'pop 1948': 'Población en 1948',
+                'jewish settlements on built area post-1948': 'Asentamientos judíos construídos después de 1948',
+            }],
+        }],
+        center: [35.112757175425116, 31.903940273167674],
+        pitch: 10,
+        bearing: 0,
+        zoom: 7,
+    },
+    {
         sceneName: 'Asentamientos ilegales',
-        sceneDescription: 'Muestra los asentamientos ilegales en Cisjordania y Jerusalén Este, así como los asentamientos ilegales en Gaza. Los asentamientos ilegales están en violación del derecho internacional.',
+        sceneDescription: 'En 1948, Israel se creó en el 78% de la Palestina histórica. En apenas el 22% restante de Palestina, es donde la comunidad internacional, la liga árabe e incluso el gobierno de Palestina, exigen dejar para un estado palestino, y que Israel no lo robe también. Sin embargo, todos los años Israel se sigue expandiendo, mediante asentamientos, a costa de familias palestinas que lo pierden todo.',
         data: [{
             fileName: 'settlements_point.geojson',
             name: 'Asentamientos ilegales',
